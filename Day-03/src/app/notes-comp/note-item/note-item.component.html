@@ -1,0 +1,7 @@
+<div class="card" style="padding: 30px;">
+    <h2>{{item.title}}</h2>
+ <button class="btn btn-primary btn-block" (click)="showNote()">Click here to view detail</button>
+</div>
+
+<app-note-detail *ngIf="show" [title]="item.title" [body]="item.body"></app-note-detail>
+

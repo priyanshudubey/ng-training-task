@@ -1,0 +1,8 @@
+<div style="display: flex;justify-content: center;">
+
+<!-- for loop to iterate and reuse component -->
+    <app-note-item 
+     *ngFor="let i of notes"
+     [item]="i">
+    </app-note-item>
+</div>
