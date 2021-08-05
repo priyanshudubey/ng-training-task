@@ -1,0 +1,156 @@
+<div class="container">
+    <h3>Task - 04 Using Angular Model Form</h3>
+    <form [formGroup]="ngform">
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">Title: </label>
+          <div class="col-md-8">
+            <select class="custom-select" [formControl]="myselect">
+                <option *ngFor="let o of selectOptions" [ngValue]="o">{{o}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">First Name: </label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" [formControl]="firstname">
+              <div class="alert alert-danger" [hidden]="firstname.valid || firstname.untouched">
+                <p>Please enter valid first name!</p> 
+              </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">Last Name: </label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" [formControl]="lastname">
+                <div class="alert alert-danger" [hidden]="lastname.valid || lastname.untouched">
+                    <p>Please enter valid last name!</p>
+                </div>
+          </div>
+         
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">Address: </label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" [formControl]="address">
+                <div class="alert alert-danger" [hidden]="address.valid || address.untouched">
+                  <p>Please enter valid address!</p>
+                </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">City: </label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" [formControl]="city">
+              <div class="alert alert-danger" [hidden]="city.valid || city.untouched">
+                  <p>Enter valid city</p>
+              </div>
+          </div>
+        
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">State: </label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" id="state" [formControl]="state">
+              <div class="alert alert-danger" [hidden]="state.valid || state.untouched">
+                <p>Please enter valid State name!</p>
+              </div>
+          </div>
+        
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">Postal Code: </label>
+          <div class="col-md-8">
+            <input type="number" class="form-control" [formControl]="postalcode">
+                <div class="alert alert-danger" [hidden]="postalcode.valid || postalcode.untouched">
+                    <p>Please enter valid Postal code!</p>
+                </div> 
+          </div>
+
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">Country: </label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" [formControl]="country">
+              <div class="alert alert-danger" [hidden]="country.valid || country.untouched">
+                <p>Please enter valid country name!</p>
+              </div>
+          </div>
+ 
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">Phone: </label>
+          <div class="col-md-8">
+            <input type="number" class="form-control" [formControl]="phone">
+              <div class="alert alert-danger" [hidden]="phone.valid || phone.untouched">
+                <p>Please enter valid mobile number!</p>
+              </div>
+          </div>
+      
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">Fax: </label>
+          <div class="col-md-8">
+            <input type="number" class="form-control" [formControl]="fax">
+               <div class="alert alert-danger" [hidden]="fax.valid || fax.untouched">
+                  <p>Please enter valid fax number!</p>
+                </div>
+          </div>
+         
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">Email:</label>
+          <div class="col-md-8">
+            <input type="email" class="form-control" [formControl]="email" >
+              <div class="alert alert-danger" [hidden]="email.valid || email.untouched">
+                 <p>Please enter valid email id!</p>
+          </div>
+          
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4 col-form-label">Payment By:</label>
+          <div class="col-md-8">
+              <div class="form-check">
+                <input class="form-check-input" name="radio" type="radio" value="Paypal" [formControl]="payment" >
+                <label class="form-check-label">
+                 PayPal
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" name="radio" type="radio"  value="manual" [formControl]="payment">
+                <label class="form-check-label">
+                 Manual: Pay on Arrival
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" name="radio" type="radio" value="cc" [formControl]="payment">
+                <label class="form-check-label">
+                 Credit Card
+                </label>
+              </div>
+          </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label">Any additional Requests:</label>
+            <textarea class="form-control col-md-8" rows="3" [formControl]="requirement"></textarea>
+            <div class="alert alert-danger" [hidden]="requirement.valid || requirement.untouched">
+                <p>Please fill the requirement</p>
+              </div>
+       </div>
+       <div class="justify-content-end row">
+            <div class="col-md-8">
+                <input class="form-check-input" type="checkbox" id="checkbox-agree" />
+                <label  class="form-check-label" for="defaultCheck1">
+                I agree with <u>terms & conditions</u>
+                </label>
+           </div>
+           
+      </div>
+      <br>
+       <div class="justify-content-end row">
+            <div class="col-md-8">
+                 <button type="submit" class="btn btn-primary" (click)="onRegister()">Confirm and checkout</button>
+           </div>
+      </div>
+      </form>
+</div>
